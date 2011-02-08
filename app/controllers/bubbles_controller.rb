@@ -1,4 +1,6 @@
 class BubblesController < ApplicationController
+  before_filter :authenticate_user!, :except => [:index, :show]
+
   # GET /bubbles
   # GET /bubbles.xml
   def index
@@ -41,6 +43,7 @@ class BubblesController < ApplicationController
   # POST /bubbles.xml
   def create
     @bubble = Bubble.new(params[:bubble])
+    @bubble.user = current_user
 
     respond_to do |format|
       if @bubble.save
