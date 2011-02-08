@@ -1,4 +1,8 @@
 Sodium::Application.routes.draw do
+  resources :projects
+
+  get "dashboard/index"
+
   devise_for :users
 
   resources :bubbles
@@ -52,7 +56,20 @@ Sodium::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "bubbles#index"
+
+  devise_scope :user do
+    get "login",  :to => "devise/sessions#new"
+    get "logout", :to => "devise/sessions#destroy"
+  end
+
+  #map.login 'login', :controller => 'devise/sessions', :action => 'new'
+  #match "login" => "devise/sessions#new", :as => 'login'
+
+  root :to => "dashboard#index"
+
+  scope :user do
+    root :to =>"dashboard#index"
+  end
 
   # See how all your routes lay out with "rake routes"
 

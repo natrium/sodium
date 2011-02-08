@@ -45,9 +45,15 @@ class BubblesController < ApplicationController
     @bubble = Bubble.new(params[:bubble])
     @bubble.user = current_user
 
+    unless (@bubble.project.nil?)
+      unless @bubble.project.user == current_user
+        redirect_to :back, :notice => 'You have no right to do this!'
+      end
+    end
+
     respond_to do |format|
       if @bubble.save
-        format.html { redirect_to(@bubble, :notice => 'Bubble was successfully created.') }
+        format.html { redirect_to :back }
         format.xml  { render :xml => @bubble, :status => :created, :location => @bubble }
       else
         format.html { render :action => "new" }

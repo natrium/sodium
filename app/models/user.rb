@@ -9,4 +9,5 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
 
   has_many :bubbles
+  has_many :projects
 end

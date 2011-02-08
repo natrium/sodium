@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<%= render 'bubbles/form' %>
+
+<p>
+  <b>Name:</b>
+  <%= @project.name %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%= @project.desc %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @project.url %>
+</p>
+
+<p>
+  <b>Slug:</b>
+  <%= @project.slug %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @project.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %> |
+<%= link_to 'zum Dashboard', :controller => 'dashboard', :action => 'index' %>
+
+<%= render @project.bubbles.reverse %>
