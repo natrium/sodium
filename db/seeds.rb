@@ -5,3 +5,37 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+
+role_manager = Role.create :name => "Manager"
+role_developer = Role.create :name => "Developer"
+role_contributor = Role.create :name => "Contributor"
+role_user = Role.create :name => "User"
+
+right_bubbles_delete = Right.create :name => "Bubbles.delete"
+right_bubbles_create = Right.create :name => "Bubbles.create"
+right_comments_delete = Right.create :name => "Comments.delete"
+right_comments_create = Right.create :name => "Comments.create"
+right_project_delete = Right.create :name => "Project.delete"
+right_roles_edit = Right.create :name => "Roles.edit"
+right_rights_edit = Right.create :name => "Rights.edit"
+
+role_manager.rights << right_bubbles_delete
+role_manager.rights << right_bubbles_create
+role_manager.rights << right_comments_delete
+role_manager.rights << right_comments_create
+role_manager.rights << right_project_delete
+role_manager.rights << right_roles_edit
+role_manager.rights << right_rights_edit
+
+role_developer.rights << right_bubbles_delete
+role_developer.rights << right_bubbles_create
+role_developer.rights << right_comments_delete
+role_developer.rights << right_comments_create
+role_developer.rights << right_project_delete
+role_developer.rights << right_roles_edit
+role_developer.rights << right_rights_edit
+
+role_contributor.rights << right_comments_create
+role_contributor.rights << right_bubbles_create
+
+role_user.rights << right_comments_create

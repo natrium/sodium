@@ -10,4 +10,9 @@ class User < ActiveRecord::Base
 
   has_many :bubbles
   has_many :projects
+  has_one :admin
+
+  def is_admin?
+    !admin.nil?
+  end
 end

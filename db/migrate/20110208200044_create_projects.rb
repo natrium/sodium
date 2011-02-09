@@ -8,11 +8,10 @@ class CreateProjects < ActiveRecord::Migration
       t.integer :user_id
 
       t.timestamps
-
-
-      add_index :projects, :name,                 :unique => true
-      add_index :projects, :slug,                 :unique => true
     end
+
+    add_index :projects, :name,                 :unique => true
+    add_index :projects, :slug,                 :unique => true
   end
 
   def self.down
