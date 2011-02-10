@@ -1,6 +1,8 @@
 class Project < ActiveRecord::Base
   belongs_to :user
   has_many :bubbles
+  has_many :memberships
+  has_many :users, :through => :memberships, :as => :members
 
   validates_presence_of :name
   validates_presence_of :slug

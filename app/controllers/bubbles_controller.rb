@@ -48,6 +48,7 @@ class BubblesController < ApplicationController
     unless (@bubble.project.nil?)
       unless @bubble.project.user == current_user
         redirect_to :back, :notice => 'You have no right to do this!'
+        return
       end
     end
 

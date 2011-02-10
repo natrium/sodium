@@ -1,7 +1,7 @@
 <p>
-  <%= bubble.user.name %>
+  <%= image_tag bubble.user.gravatar_url %>
   <br />
   <%= bubble.text %>
   <br />
-  <%= bubble.created_at %>
+  Posted <%= time_ago_in_words bubble.created_at %> ago
 </p>

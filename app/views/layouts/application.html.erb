@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   <title>Sodium</title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
@@ -8,10 +9,99 @@
 </head>
 <body>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+<div id="wrap">
 
-<%= yield %>
+  <div id="header">
+
+    <h1><a href="/">Sodium</a></h1>
+
+    <h2>where Open Source has a home..</h2>
+
+  </div>
+
+  <div id="headerbottom">
+
+  </div>
+
+  <div id="contentwrap">
+
+    <div id="content">
+      <% if notice %>
+      <p class="notice"><%= notice %></p>
+      <% end %>
+      <% if flash[:error] %>
+      <p class="error"><%= flash[:error] %></p>
+      <% end %>
+
+      <%= yield %>
+
+    </div>
+
+    <div id="sidebar">
+      <% unless current_user.nil?  %>
+      <h3>Projects</h3>
+      <ul>
+        <%= render current_user.projects %>
+      </ul>
+      <%= link_to 'Create new project', new_project_url %>
+      <% end %>
+
+      <h3>New Projects</h3>
+      <ul>
+        <%= render Project.all(:limit => 5, :order => 'created_at DESC') %>
+      </ul>
+
+      <h3>Menu Navigation</h3>
+      <ul>
+        <li><a href="#">Proin at</a></li>
+        <li><a href="#">Class aptent taciti</a></li>
+        <li><a href="#">Morbi in dolor</a></li>
+        <li><a href="#">Praesent ultricies</a></li>
+        <li><a href="#">Aenean euismod</a></li>
+
+        <li><a href="#">Donec sempe</a></li>
+        <li><a href="#">Suspendisse potenti</a></li>
+      </ul>
+
+      <h3>Useful Resources</h3>
+      <ul>
+        <li><a href="#">Praesent ultricies</a></li>
+        <li><a href="#">Aenean euismod</a></li>
+        <li><a href="#">Donec sempe</a></li>
+        <li><a href="#">Suspendisse potenti</a></li>
+
+        <li><a href="#">Proin at</a></li>
+        <li><a href="#">Class aptent taciti</a></li>
+      </ul>
+
+      <h3>Another List</h3>
+      <ul>
+        <li><a href="#">Proin at</a></li>
+        <li><a href="#">Class aptent taciti</a></li>
+        <li><a href="#">Morbi in dolor euismod</a></li>
+        <li><a href="#">Aenean euismod aptent</a></li>
+
+        <li><a href="#">Donec sempe</a></li>
+        <li><a href="#">Suspendisse potenti</a></li>
+        <li><a href="#">Proin at aptent donec</a></li>
+      </ul>
+
+    </div>
+
+    <div style="clear: both;"></div>
+
+  </div>
+
+  <div id="bottom"></div>
+
+  <div id="footer">
+    <p>&copy; Copyright 2011 <a href="#">Sodium</a> |
+      <a href="http://www.blogliber.com/xhtmlcss-templates/green-property-free-web-template/">Green Template</a> by
+      <a href="http://www.blogliber.com">Blog Liber</a></p>
+  </div>
+
+</div>
 
 </body>
+
 </html>

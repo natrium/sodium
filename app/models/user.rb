@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  include Gravtastic
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
   # , :trackable
@@ -15,4 +17,6 @@ class User < ActiveRecord::Base
   def is_admin?
     !admin.nil?
   end
+
+  gravtastic :size => 64
 end
