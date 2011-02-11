@@ -156,3 +156,40 @@ a:hover {
 #footer a:hover {
     text-decoration: underline;
 }
+
+textarea {
+    width: 490px;
+    height: 60px;
+    border: 2px solid #ccc;
+    padding: 3px;
+    color: #555;
+    font: 16px Arial, Helvetica, sans-serif;
+}
+
+form .counter {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ccc;
+}
+
+form .warning {
+    color: #600;
+}
+
+form .exceeded {
+    color: #e00;
+}
+
+form div {
+    position: relative;
+    margin: 1em 0;
+    padding-top: 10px;
+}
+
+form {
+    width: 500px;
+}
+

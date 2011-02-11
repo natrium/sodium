@@ -3,4 +3,5 @@ en:
   bubbles:
     index:
     forms:
-      submit_text: 'bubble'
+      submit_text: 'Bubble'
+      whats_new: "What's new?"

@@ -1,3 +1,7 @@
 ---
 de:
-  
+  bubbles:
+    index:
+    forms:
+      submit_text: 'Bubble'
+      whats_new: "Was gibt's neues?"
