@@ -1,4 +1,10 @@
-<p id="notice"><%= notice %></p>
+<p>
+  <% if current_user.follows_project? @project %>
+    <%= button_to t('projects.unfollow'), unfollow_project_path(:id => @project.id) %>
+  <% else %>
+    <%= button_to t('projects.follow'), follow_project_path(:id => @project.id) %>
+  <% end %>
+</p>
 
 <%= render 'bubbles/form' %>
 

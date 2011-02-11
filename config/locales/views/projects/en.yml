@@ -1,2 +1,10 @@
 ---
 en:
+  projects:
+    follow: 'Follow'
+    unfollow: 'Unfollow'
+    follow_success: 'You are now following: '
+    unfollow_success: 'You unfollowed: '
+    follow_error: 'Error following: '
+    unfollow_error: 'Error unfollowing: '
+

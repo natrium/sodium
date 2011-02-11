@@ -39,3 +39,11 @@ role_contributor.rights << right_comments_create
 role_contributor.rights << right_bubbles_create
 
 role_user.rights << right_comments_create
+
+admin = User.create :name => 'Admin', :email => 'admin@primus-fatum.de', :password => 'admin123'
+user = User.create :name => 'User', :email => 'user@primus-fatum.de', :password => 'user123'
+
+project = Project.create :name => 'Sample Project', :user => admin,
+                         :desc => 'sample project', :slug => 'sample'
+
+membership = Membership.create :project => project, :role => user_role, :user => user

@@ -84,4 +84,31 @@ class ProjectsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def follow
+    project = Project.find params[:id]
+    role = Role.find_by_name 'User'
+    user = current_user
+    membership = Membership.new :project => project, :role => role, :user => user
+
+    if membership.save
+      flash[:notice] = t("projects.follow_success") + project.name
+    else
+      flash[:notice] = t("projects.follow_error") + project.name
+    end
+    redirect_to :back
+  end
+
+  def unfollow
+    project = Project.find params[:id]
+    user = current_user
+
+    if user.follows_project? project
+      user.followed_projects.delete project
+      flash[:notice] = t("projects.unfollow_success") + project.name
+    else
+      flash[:notice] = t("projects.unfollow_error") + project.name
+    end
+    redirect_to :back
+  end
 end

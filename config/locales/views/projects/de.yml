@@ -1,3 +1,9 @@
 ---
 de:
-  
+  projects:
+    follow: 'Folgen'
+    unfollow: 'Entfolgen'
+    follow_success: 'Du folgst jetzt: '
+    follow_success: 'Du folgst jetzt nicht mehr: '
+    follow_error: 'Fehler beim verfolgen von: '
+    unfollow_error: 'Fehler beim entfolgen: '

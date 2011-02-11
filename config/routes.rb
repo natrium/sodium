@@ -62,6 +62,9 @@ Sodium::Application.routes.draw do
     get "logout", :to => "devise/sessions#destroy"
   end
 
+  match "follow_project" => "projects#follow", :as => 'follow_project'
+  match "unfollow_project" => "projects#unfollow", :as => 'unfollow_project'
+
   #map.login 'login', :controller => 'devise/sessions', :action => 'new'
   #match "login" => "devise/sessions#new", :as => 'login'
 
