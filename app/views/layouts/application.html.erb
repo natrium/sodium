@@ -19,10 +19,6 @@
 
   </div>
 
-  <div id="headerbottom">
-
-  </div>
-
   <div id="contentwrap">
 
     <div id="content">
@@ -38,7 +34,7 @@
     </div>
 
     <div id="sidebar">
-      <% unless current_user.nil?  %>
+      <% unless current_user.nil? %>
       <h3>Projects</h3>
       <ul>
         <%= render current_user.projects %>
@@ -48,7 +44,9 @@
 
       <h3>New Projects</h3>
       <ul>
-        <%= render Project.all(:limit => 5, :order => 'created_at DESC') %>
+        <% Project.all(:limit => 5, :order => 'created_at DESC').each do |p| %>
+            <%= render :partial => '/projects/project', :locals => {:project => p} %>
+        <% end %>
       </ul>
 
       <h3>Menu Navigation</h3>

@@ -1,0 +1,39 @@
+en:
+  errors:
+    messages:
+      not_found: "nicht gefunden"
+      already_confirmed: "bereits aktiviert"
+      not_locked: "war nicht gesperrt"
+
+  devise:
+    failure:
+      unauthenticated: 'Du musst dich erst einloggen.'
+      unconfirmed: 'Du musst deinen Zugang erst aktivieren'
+      locked: 'Dein Zugang ist gesperrt.'
+      invalid: 'Ungülgites Login oder Passwort.'
+      invalid_token: 'Ungültiges Auth-Token.'
+      timeout: 'Deine Sitzung ist abgelaufen. Bitte melde dich neu an.'
+      inactive: 'Dein Account wurde noch nicht aktiviert.'
+    sessions:
+      signed_in: 'Login erfolgreich.'
+      signed_out: 'Logout erfolgreich.'
+    passwords:
+      send_instructions: 'Dir wurde eine E-Mail geschickt, in der steht, wie du dein Passwort zurücksetzt.'
+      updated: 'Dein Passwort wurde erfolgreich zurückgesetzt. Du bist jetzt wieder angemeldet.'
+    confirmations:
+      send_instructions: 'Dir wurde eine E-Mail geschickt, in der steht, wie du deinen Zugang aktivierst.'
+      confirmed: 'Your account was successfully confirmed. You are now signed in.'
+    registrations:
+      signed_up: 'You have signed up successfully. If enabled, a confirmation was sent to your e-mail.'
+      updated: 'You updated your account successfully.'
+      destroyed: 'Bye! Your account was successfully cancelled. We hope to see you again soon.'
+    unlocks:
+      send_instructions: 'You will receive an email with instructions about how to unlock your account in a few minutes.'
+      unlocked: 'Your account was successfully unlocked. You are now signed in.'
+    mailer:
+      confirmation_instructions:
+        subject: 'Confirmation instructions'
+      reset_password_instructions:
+        subject: 'Reset password instructions'
+      unlock_instructions:
+        subject: 'Unlock Instructions'
