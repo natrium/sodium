@@ -2,44 +2,44 @@
 de:
   datetime:
     distance_in_words:
-      half_a_minute: "half a minute"
+      half_a_minute: "eine halbe Minute"
       less_than_x_seconds:
-        one:   "less than 1 second"
-        other: "less than %{count} seconds"
+        one:   "weniger als 1 Sekunde"
+        other: "weniger als %{count} Sekunden"
       x_seconds:
-        one:   "1 second"
-        other: "%{count} seconds"
+        one:   "1 Sekunde"
+        other: "%{count} Sekunden"
       less_than_x_minutes:
-        one:   "less than a minute"
-        other: "less than %{count} minutes"
+        one:   "weniger als einer Minute"
+        other: "weniger als %{count} Minuten"
       x_minutes:
-        one:   "1 minute"
-        other: "%{count} minutes"
+        one:   "1 Minute"
+        other: "%{count} Minuten"
       about_x_hours:
         one:   "etwa 1 Stunde"
         other: "about %{count} hours"
       x_days:
-        one:   "1 day"
-        other: "%{count} days"
+        one:   "1 Tag"
+        other: "%{count} Tage"
       about_x_months:
-        one:   "about 1 month"
-        other: "about %{count} months"
+        one:   "etwa 1 Monat"
+        other: "etwa %{count} Monate"
       x_months:
-        one:   "1 month"
-        other: "%{count} months"
+        one:   "1 Monat"
+        other: "%{count} Monate"
       about_x_years:
-        one:   "about 1 year"
-        other: "about %{count} years"
+        one:   "etwa 1 Jahr"
+        other: "etwa %{count} Jahre"
       over_x_years:
-        one:   "over 1 year"
-        other: "over %{count} years"
+        one:   "über 1 Jahr"
+        other: "über %{count} Jahre"
       almost_x_years:
-        one:   "almost 1 year"
-        other: "almost %{count} years"
+        one:   "fast 1 Jahr"
+        other: "fast %{count} Jahre"
     prompts:
-      year:   "Year"
-      month:  "Month"
-      day:    "Day"
-      hour:   "Hour"
+      year:   "Jahr"
+      month:  "Monat"
+      day:    "Tag"
+      hour:   "Stunde"
       minute: "Minute"
-      second: "Seconds"
+      second: "Sekunde"
