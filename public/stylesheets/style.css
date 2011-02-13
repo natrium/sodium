@@ -193,3 +193,68 @@ form {
     width: 500px;
 }
 
+ul#postlist {
+    list-style: none outside none;
+    margin-top: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+ul#postlist li {
+    overflow: visible;
+    padding: 0;
+}
+
+ul#postlist p {
+    margin: 0;
+}
+
+img.avatar {
+    border-color: #CCCCCC;
+    border: 1px solid;
+    float: left;
+    margin-right: 10px;
+    margin-top: 0;
+}
+
+#postlist h4 {
+    border-bottom-color: #F0F0F0;
+    font-size: 1em;
+    line-height: 1.2em;
+    margin-left: 55px;
+    position: relative;
+    margin: 0;
+}
+
+.postcontent {
+    color: #555555;
+    overflow: visible;
+    padding-left: 60px;
+}
+
+#postlist .postmeta p {
+    color: #888888;
+    font-size: 0.85em;
+}
+
+.bottom-of-post {
+    display: inline-block;
+    height: 9px;
+    margin-bottom: 1px;
+    overflow: hidden;
+    width: 100%;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #BBBBBB;
+}
+
+#bubble_submit {
+    float:right;
+    border:1px solid #ccc;
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin: 0; 
+    margin-top: -15px; 
+    padding: 3px 12px;
+}

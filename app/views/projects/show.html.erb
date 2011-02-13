@@ -38,4 +38,6 @@
 <%= link_to 'Back', projects_path %> |
 <%= link_to 'zum Dashboard', :controller => 'dashboard', :action => 'index' %>
 
+<ul id="postlist">
 <%= render @project.bubbles.reverse %>
+</ul>

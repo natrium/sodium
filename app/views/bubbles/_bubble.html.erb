@@ -1,7 +1,11 @@
-<p>
-  <%= image_tag bubble.user.gravatar_url %>
-  <br />
-  <%= bubble.text %>
-  <br />
-  Posted <%= time_ago_in_words bubble.created_at %> ago
-</p>
+<li>
+  <a href=""><%= image_tag bubble.user.gravatar_url, :class => "avatar" %></a> 
+  <h4><%= link_to bubble.user.name %></h4>
+  <div class="postcontent">
+	<p><%= bubble.text %></p>
+  </div>
+  <div class="postmeta">
+    <p>Posted <%= time_ago_in_words bubble.created_at %> ago</p>
+  </div>
+  <div class="bottom-of-post">&nbsp;</div>
+</li>
