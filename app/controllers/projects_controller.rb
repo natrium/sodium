@@ -14,7 +14,12 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.xml
   def show
-    @project = Project.find(params[:id])
+    if params[:slug]
+      @project = Project.find_by_slug(params[:slug])
+    else
+      @project = Project.find(params[:id])
+    end
+
     @bubble = Bubble.new
     @bubble.project = @project
 

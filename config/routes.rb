@@ -74,6 +74,8 @@ Sodium::Application.routes.draw do
     root :to =>"dashboard#index"
   end
 
+  match 'project/:slug' => 'projects#show'
+
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
