@@ -32,3 +32,4 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 
 gem 'devise'
 gem 'gravtastic'
+gem 'stringex'
