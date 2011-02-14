@@ -1,9 +1,26 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+admin_bubble1:
+  text: "First Admin Bubble"
+  user: admin
 
-one:
-  text: MyString
-  user_id: 1
+admin_bubble2:
+  text: "Second Admin Bubble"
+  user: admin
 
-two:
-  text: MyString
-  user_id: 1
+admin_bubble3:
+  text: "First Admin Project Bubble"
+  user: admin
+  project: project1
+
+admin_bubble4:
+  text: "Second Admin Project Bubble"
+  user: admin
+  project: project1
+
+user_bubble1:
+  text: "First User Bubble"
+  user: user
+
+user_bubble2:
+  text: "Second User Bubble"
+  user: user
+

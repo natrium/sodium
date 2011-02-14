@@ -1,7 +1,13 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: MyString
+role_manager:
+  name: "Manager"
 
-two:
-  name: MyString
+role_developer:
+  name: "Developer"
+
+role_contributor:
+  name: "Contributor"
+
+role_user:
+  name: "User"

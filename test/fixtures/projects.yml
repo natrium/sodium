@@ -1,15 +1,12 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+---
+project1:
+  name: 'Sample Admin Project'
+  user: admin
+  desc: 'sample admin project'
+  slug: 'sample-admin-project'
 
-one:
-  name: MyString
-  desc: MyString
-  url: MyString
-  slug: MyString
-  user_id: 1
-
-two:
-  name: MyString
-  desc: MyString
-  url: MyString
-  slug: MyString
-  user_id: 1
+project2:
+  name: 'Sample User Project'
+  user: user
+  desc: 'sample user project'
+  slug: 'sample-user-project'

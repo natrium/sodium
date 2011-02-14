@@ -1,7 +1,22 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: MyString
+right_bubbles_delete:
+  name: "Bubbles.delete"
 
-two:
-  name: MyString
+right_bubbles_create:
+  name: "Bubbles.create"
+
+right_comments_delete:
+  name: "Comments.delete"
+
+right_comments_create:
+  name: "Comments.create"
+
+right_project_delete:
+  name: "Project.delete"
+
+right_roles_edit:
+  name: "Roles.edit"
+
+right_rights_edit:
+  name: "Rights.edit"

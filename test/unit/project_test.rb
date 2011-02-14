@@ -1,8 +1,10 @@
 require 'test_helper'
 
 class ProjectTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+  def test_project_validity
+    assert projects(:project1).valid?, "project1 is not valid" 
+  end
+
+  def test_uniqueness_of_name
   end
 end

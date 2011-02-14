@@ -1,11 +1,15 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+---
+membership1:
+  project: project1
+  role: role_user
+  user: user
 
-# This model initially had no columns defined.  If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+membership2:
+  project: project1
+  role: role_manager
+  user: admin
+
+membership3:
+  project: project2
+  role: role_manager
+  user: user

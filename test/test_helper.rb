@@ -1,4 +1,5 @@
 ENV["RAILS_ENV"] = "test"
+require 'i18n'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 
