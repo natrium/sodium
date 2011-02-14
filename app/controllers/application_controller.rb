@@ -8,6 +8,5 @@ class ApplicationController < ActionController::Base
       session[:locale] = params[:lang]
     end
     I18n.locale = session[:locale]
-    puts "Language: " + params[:lang].to_s + " Session: " + session[:locale]
   end
 end
