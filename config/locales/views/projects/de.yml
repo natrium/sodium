@@ -7,3 +7,4 @@ de:
     follow_success: 'Du folgst jetzt nicht mehr: '
     follow_error: 'Fehler beim verfolgen von: '
     unfollow_error: 'Fehler beim entfolgen: '
+    back_to_timeline: 'zurück zur Timeline'
