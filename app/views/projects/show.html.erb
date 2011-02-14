@@ -36,7 +36,7 @@
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %> |
-<%= link_to 'zum Dashboard', :controller => 'dashboard', :action => 'index' %>
+<%= link_to t('projects.back_to_timeline'), :controller => 'timeline', :action => 'index' %>
 
 <ul id="postlist">
 <%= render @project.bubbles.reverse %>

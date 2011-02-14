@@ -1,7 +1,11 @@
 Sodium::Application.routes.draw do
+  match '/:slug' => 'projects#show'
+  #match '/u/:name' => 'users#show'
+
   resources :projects
 
-  get "dashboard/index"
+  # user will be redirected to after login with devise
+  # get "timeline/index"
 
   devise_for :users
 
@@ -68,13 +72,11 @@ Sodium::Application.routes.draw do
   #map.login 'login', :controller => 'devise/sessions', :action => 'new'
   #match "login" => "devise/sessions#new", :as => 'login'
 
-  root :to => "dashboard#index"
+  root :to => "timeline#index"
 
   scope :user do
-    root :to =>"dashboard#index"
+    root :to =>"timeline#index"
   end
-
-  match 'project/:slug' => 'projects#show'
 
   # See how all your routes lay out with "rake routes"
 
