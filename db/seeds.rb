@@ -43,7 +43,20 @@ role_user.rights << right_comments_create
 admin = User.create :name => 'Admin', :email => 'admin@primus-fatum.de', :password => 'admin123'
 user = User.create :name => 'User', :email => 'user@primus-fatum.de', :password => 'user123'
 
-project = Project.create :name => 'Sample Project', :user => admin,
-                         :desc => 'sample project', :slug => 'sample'
+project1 = Project.create :name => 'Sample Admin Project', :user => admin,
+                         :desc => 'sample admin project'
+project2 = Project.create :name => 'Sample User Project', :user => admin,
+                         :desc => 'sample user project'
 
-membership = Membership.create :project => project, :role => user_role, :user => user
+membership1 = Membership.create :project => project1, :role => role_user, :user => user
+membership2 = Membership.create :project => project1, :role => role_manager, :user => admin
+membership3 = Membership.create :project => project2, :role => role_manager, :user => user
+
+admin_bubble1 = Bubble.create(:text => "First Admin Bubble", :user => admin)
+admin_bubble2 = Bubble.create(:text => "Second Admin Bubble", :user => admin)
+admin_bubble3 = Bubble.create(:text => "First Admin Project Bubble", :user => admin, :project => project1)
+admin_bubble4 = Bubble.create(:text => "Second Admin Project Bubble", :user => admin, :project => project1)
+
+user_bubble1 = Bubble.create(:text => "First User Bubble", :user => user)
+user_bubble2 = Bubble.create(:text => "Second User Bubble", :user => user)
+
