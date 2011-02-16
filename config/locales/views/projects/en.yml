@@ -7,4 +7,13 @@ en:
     unfollow_success: 'You unfollowed: '
     follow_error: 'Error following: '
     unfollow_error: 'Error unfollowing: '
-    back_to_timeline: 'back to Timeline'
+    back_to_timeline: 'Back to Timeline'
+    edit: 'Edit Project'
+    role:
+      name: 'Name'
+      manager: 'Manager'
+      developer: 'Developer'
+      contributor: 'Contributor'
+      user: 'User'
+    membership:
+      change: 'change'

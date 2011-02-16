@@ -116,4 +116,12 @@ class ProjectsController < ApplicationController
     end
     redirect_to :back
   end
+
+  def edit_member
+    @membership = Membership.find_by_user_id_and_project_id params[:user_id], params[:project_id]
+    @membership.role_id = params[:membership][:role_id]
+    @membership.save
+
+    redirect_to :back
+  end
 end

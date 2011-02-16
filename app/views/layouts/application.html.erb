@@ -25,10 +25,10 @@
 
     <div id="content">
       <% if notice %>
-      <p class="notice"><%= notice %></p>
+          <p class="notice"><%= notice %></p>
       <% end %>
       <% if flash[:error] %>
-      <p class="error"><%= flash[:error] %></p>
+          <p class="error"><%= flash[:error] %></p>
       <% end %>
 
       <%= yield %>
@@ -37,11 +37,11 @@
 
     <div id="sidebar">
       <% unless current_user.nil? %>
-      <h3>Projects</h3>
-      <ul>
-        <%= render current_user.projects %>
-      </ul>
-      <%= link_to 'Create new project', new_project_url %>
+          <h3>Projects</h3>
+          <ul>
+            <%= render current_user.projects %>
+          </ul>
+          <%= link_to 'Create new project', new_project_url %>
       <% end %>
 
       <h3>New Projects</h3>
@@ -50,20 +50,24 @@
             <%= render :partial => '/projects/project', :locals => {:project => p} %>
         <% end %>
       </ul>
-
+      <% if content_for?(:sidebar) %>
+          <%= yield :sidebar %>
+      <% end %>
     </div>
 
-    <div style="clear: both;"></div>
-
   </div>
 
-  <div id="bottom"></div>
+  <div style="clear: both;"></div>
 
-  <div id="footer">
-    <p>&copy; Copyright 2011 <a href="#">Sodium</a> |
-      <a href="http://www.blogliber.com/xhtmlcss-templates/green-property-free-web-template/">Green Template</a> by
-      <a href="http://www.blogliber.com">Blog Liber</a></p>
-  </div>
+</div>
+
+<div id="bottom"></div>
+
+<div id="footer">
+  <p>&copy; Copyright 2011 <a href="#">Sodium</a> |
+    <a href="http://www.blogliber.com/xhtmlcss-templates/green-property-free-web-template/">Green Template</a> by
+    <a href="http://www.blogliber.com">Blog Liber</a></p>
+</div>
 
 </div>
 

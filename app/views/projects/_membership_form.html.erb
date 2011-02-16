@@ -1,0 +1,22 @@
+<ul>
+  <% @project.memberships.reverse.each do |m| %>
+      <li>
+        <%= m.user.name %>
+        <%= form_tag({:controller => 'projects', :action => 'edit_member'}) do -%>
+            <% @membership = m %>
+            <%= hidden_field_tag :user_id, m.user.id %>
+            <%= hidden_field_tag :project_id, m.project.id %>
+
+            <%= radio_button 'membership', 'role_id', Role.find_by_name("Manager").id%>
+            <%= t('projects.role.manager') %>
+            <%= radio_button 'membership', 'role_id', Role.find_by_name("Developer").id %>
+            <%= t('projects.role.developer') %>
+            <%= radio_button 'membership', 'role_id', Role.find_by_name("Contributor").id %>
+            <%= t('projects.role.contributor') %>
+            <%= radio_button 'membership', 'role_id', Role.find_by_name("User").id %>
+            <%= t('projects.role.user') %>
+            <%= submit_tag t('projects.membership.change') %>
+        <% end -%>
+      </li>
+  <% end %>
+</ul>
