@@ -30,6 +30,10 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 #   gem 'webrat'
 # end
 
+group :development do
+  gem 'ruby-debug19'
+end
+
 gem 'devise'
 gem 'gravtastic'
 gem 'stringex'
