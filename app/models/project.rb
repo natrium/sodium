@@ -8,7 +8,9 @@ class Project < ActiveRecord::Base
   validates_uniqueness_of :name
   validates_uniqueness_of :slug
   validates_format_of :url, :with => /^(#{URI::regexp(%w(http https))})$/, :allow_blank => true
-  
+
+  mount_uploader :avatar, ProjectImageUploader
+
   before_validation :on => :save do
     generate_slug
   end

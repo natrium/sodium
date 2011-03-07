@@ -1,4 +1,4 @@
-<%= form_for(@project) do |f| %>
+<%= form_for @project, :html => {:multipart => true} do |f| %>
   <% if @project.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
@@ -23,6 +23,14 @@
     <%= f.label :url %><br />
     <%= f.text_field :url %>
   </div>
+    <div class="field">
+      <%= f.label :avatar %>
+      <%= f.file_field :avatar %>
+    </div>
+    <div>
+      <%= f.label :remote_avatar_url, "or image URL" %>
+      <%= f.text_field :remote_avatar_url %>
+    </div>
   <div class="actions">
     <%= f.submit %>
   </div>

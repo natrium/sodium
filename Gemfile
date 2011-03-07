@@ -37,3 +37,6 @@ end
 gem 'devise'
 gem 'gravtastic'
 gem 'stringex'
+
+gem 'rmagick'
+gem 'carrierwave'
