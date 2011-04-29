@@ -18,6 +18,13 @@
     <h1><a href="/">Sodium</a></h1>
 
     <h2>where Open Source has a home..</h2>
+    <p style="float:right">
+      <% unless current_user.nil? %>
+        <%= link_to "logout", logout_path %>
+      <% else %>
+        <%= link_to "login", login_path %>
+      <% end %>
+    </p>
 
   </div>
 
