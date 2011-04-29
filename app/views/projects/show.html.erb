@@ -1,55 +1,33 @@
 <% content_for :sidebar do %>
     <ul>
+      <% if authorized?("project.edit", @project) %>
+          <li>
+            <%= link_to t('projects.edit'), edit_project_path(@project) %>
+          </li>
+      <% end %>
       <li>
-        <%= link_to t('projects.edit'), edit_project_path(@project) %>
+        <%= link_to t('projects.back_to_timeline'), :controller => 'timeline', :action => 'index' %>
       </li>
     </ul>
 <% end %>
 
+<h1><%= @project.name %></h1>
+<%= image_tag @project.avatar_url(:thumb).to_s, :class => 'project_image' %>
+<p><%= @project.desc %></p>
+<div class="clear"></div>
 
-<%= image_tag @project.avatar_url(:thumb).to_s %>
-<p>
-  <% unless current_user.nil? %>
-      <% if current_user.follows_project?(@project) %>
+<% unless current_user.nil? %>
+    <% if current_user.follows_project?(@project) %>
         <%= button_to t('projects.unfollow'), unfollow_project_path(:id => @project.id) %>
-      <% else %>
+    <% else %>
         <%= button_to t('projects.follow'), follow_project_path(:id => @project.id) %>
-      <% end %>
-  <% end %>
-</p>
+    <% end %>
+<% end %>
 
-<%= render 'bubbles/form' %>
-
-<p>
-  <b>Name:</b>
-  <%= @project.name %>
-</p>
-
-<p>
-  <b>Desc:</b>
-  <%= @project.desc %>
-</p>
-
-<p>
-  <b>Url:</b>
-  <%= @project.url %>
-</p>
-
-<p>
-  <b>Slug:</b>
-  <%= @project.slug %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%= @project.user.name %>
-</p>
-
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %> |
-<%= link_to t('projects.back_to_timeline'), :controller => 'timeline', :action => 'index' %>
+<% if authorized?("bubbles.create", @project) %>
+    <%= render 'bubbles/form' %>
+<% end %>
 
 <ul id="postlist">
-<%= render @project.bubbles.reverse %>
+  <%= render @project.bubbles.reverse %>
 </ul>

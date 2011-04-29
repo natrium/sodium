@@ -1,6 +1,12 @@
+<% content_for :sidebar do %>
+    <ul>
+      <li>
+        <%= link_to t('projects.back_to_timeline'), :controller => 'timeline', :action => 'index' %>
+      </li>
+    </ul>
+<% end %>
+
 <h1>Editing project</h1>
 
 <%= render 'form' %>
 <%= render 'membership_form' %>
-<%= link_to 'Show', @project %> |
-<%= link_to 'Back', projects_path %>
