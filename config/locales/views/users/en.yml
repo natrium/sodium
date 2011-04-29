@@ -1,0 +1,6 @@
+---
+en:
+  users:
+    index:
+    forms:
+      submit_text: 'Update'

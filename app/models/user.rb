@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
+  attr_accessible :avatar
 
   has_many :bubbles
   has_many :projects
@@ -18,6 +19,8 @@ class User < ActiveRecord::Base
   has_many :followed_projects, :through => :memberships, :source => :project
   
   has_one :admin
+
+  mount_uploader :avatar, UserImageUploader
 
   def is_admin?
     !admin.nil?

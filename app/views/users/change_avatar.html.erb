@@ -1,0 +1,42 @@
+<h1>Change Avatar</h1>
+Aktueller Avatar:
+<p>
+  <a href="">
+  <% if @user.avatar_url(:thumb) %>
+          <%= image_tag @user.avatar_url(:thumb), :class => "avatar" %>
+  <% else %>
+          <%= image_tag @user.gravatar_url, :class => "avatar" %>
+  <% end %>
+    </a>
+</p>
+<div style="clear:both"></div>
+
+<%= form_for @user, :html => {:multipart => true}, :url => {:controller => 'users', :action => 'update_avatar'} do |f| %>
+    <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+          <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :avatar %>
+      <%= f.file_field :avatar %>
+    </div>
+
+    <div>
+      <%= f.label :remote_avatar_url, "or image URL" %>
+      <%= f.text_field :remote_avatar_url %>
+    </div>
+    
+    <div class="actions">
+      <%= f.submit t('users.forms.submit_text') %>
+    </div>
+<% end %>
+
+<%= debug @params %>

@@ -1,0 +1,9 @@
+<a href="">
+    <%= image_tag user.gravatar_url, :class => "avatar" %>
+</a>
+
+<% unless current_user.nil? %>
+    <% if current_user == user %>
+        <%= link_to "Change Avatar", users_change_avatar_path %>
+    <% end %>
+<% end %>
