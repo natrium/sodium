@@ -1,5 +1,5 @@
 <li>
-  <a href=""><%= image_tag bubble.user.gravatar_url, :class => "avatar" %></a> 
+  <%= render :partial => 'users/avatar', :locals => {:user => bubble.user } %>
   <h4><%= link_to bubble.user.name %></h4>
   <div class="postcontent">
 	<p><%= bubble.text %></p>
