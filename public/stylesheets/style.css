@@ -258,3 +258,12 @@ img.avatar {
     margin-top: -15px; 
     padding: 3px 12px;
 }
+
+.project_image {
+    float:  left;
+    margin-right: 10px;
+}
+
+.clear {
+    clear:both;
+}
