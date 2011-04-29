@@ -9,10 +9,12 @@
 
 <%= image_tag @project.avatar_url(:thumb).to_s %>
 <p>
-  <% if current_user.follows_project? @project %>
-    <%= button_to t('projects.unfollow'), unfollow_project_path(:id => @project.id) %>
-  <% else %>
-    <%= button_to t('projects.follow'), follow_project_path(:id => @project.id) %>
+  <% unless current_user.nil? %>
+      <% if current_user.follows_project?(@project) %>
+        <%= button_to t('projects.unfollow'), unfollow_project_path(:id => @project.id) %>
+      <% else %>
+        <%= button_to t('projects.follow'), follow_project_path(:id => @project.id) %>
+      <% end %>
   <% end %>
 </p>
 
