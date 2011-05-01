@@ -1,9 +1,9 @@
 Sodium::Application.routes.draw do
-#  get "pages/contact"
-#  get "pages/privacy"
-#  get "pages/about"
-#  get "pages/help"
-#  get "pages/tos"
+  get "pages/contact"
+  get "pages/privacy"
+  get "pages/about"
+  get "pages/help"
+  get "pages/tos"
   get "pages/index"
   get "timeline/index"
 

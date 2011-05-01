@@ -66,14 +66,25 @@
 
   <div style="clear: both;"></div>
 
+  <div id="bottom"></div>
+
 </div>
 
-<div id="bottom"></div>
-
 <div id="footer">
-  <p>&copy; Copyright 2011 <a href="#">Sodium</a> |
-    <a href="http://www.blogliber.com/xhtmlcss-templates/green-property-free-web-template/">Green Template</a> by
-    <a href="http://www.blogliber.com">Blog Liber</a></p>
+  <p>
+    <strong>Languages</strong> &middot;
+    <a href="?lang=en">English</a> &middot;
+    <a href="?lang=de">Deutsch</a> &middot;
+    <a href="?lang=it">Italiano</a>
+  </p>
+  <p>
+    <%= link_to 'About', pages_about_path %> &middot;
+    <%= link_to 'Help', pages_help_path %> &middot;
+    <%= link_to 'Contact', pages_contact_path %> &middot;
+    <%= link_to 'Privacy', pages_privacy_path %> &middot;
+    <%= link_to 'Terms', pages_tos_path %>
+    &copy; Copyright 2011 <a href="#">Sodium</a>
+  </p>
 </div>
 
 </div>
