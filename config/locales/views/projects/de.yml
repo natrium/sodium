@@ -4,7 +4,16 @@ de:
     follow: 'Folgen'
     unfollow: 'Entfolgen'
     follow_success: 'Du folgst jetzt: '
-    follow_success: 'Du folgst jetzt nicht mehr: '
+    unfollow_success: 'Du folgst jetzt nicht mehr: '
     follow_error: 'Fehler beim verfolgen von: '
     unfollow_error: 'Fehler beim entfolgen: '
     back_to_timeline: 'zurück zur Timeline'
+    edit: 'Projekt editieren'
+    role:
+      name: 'Name'
+      manager: 'Manager'
+      developer: 'Entwickler'
+      contributor: 'Mitwirkender'
+      user: 'User'
+    membership:
+      change: 'ändern'

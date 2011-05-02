@@ -73,9 +73,9 @@
 <div id="footer">
   <p>
     <strong>Languages</strong> &middot;
-    <a href="?lang=en">English</a> &middot;
-    <a href="?lang=de">Deutsch</a> &middot;
-    <a href="?lang=it">Italiano</a>
+    <%= I18n.available_locales.collect { |locale| %>
+      <% link_to I18n.t('language.name', :locale => locale), '?lang=' + locale.to_s %>
+    <% }.join(" &middot; ").html_safe %>
   </p>
   <p>
     <%= link_to 'About', pages_about_path %> &middot;
