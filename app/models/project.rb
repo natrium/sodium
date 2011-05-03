@@ -5,6 +5,7 @@ class Project < ActiveRecord::Base
   has_many :members, :through => :memberships, :source => :user
 
   validates_presence_of :name
+  validates_presence_of :avatar
   validates_uniqueness_of :name
   validates_uniqueness_of :slug
   validates_format_of :url, :with => /^(#{URI::regexp(%w(http https))})$/, :allow_blank => true

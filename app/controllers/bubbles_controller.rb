@@ -46,7 +46,7 @@ class BubblesController < ApplicationController
     @bubble.user = current_user
 
     unless (@bubble.project.nil?)
-      unless @bubble.project.user == current_user
+      unless authorized? 'bubbles.create', @bubble.project
         redirect_to :back, :notice => 'You have no right to do this!'
         return
       end

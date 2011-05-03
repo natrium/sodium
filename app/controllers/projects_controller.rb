@@ -7,7 +7,7 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @projects }
+      format.xml { render :xml => @projects }
     end
   end
 
@@ -25,7 +25,7 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @project }
+      format.xml { render :xml => @project }
     end
   end
 
@@ -36,7 +36,7 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @project }
+      format.xml { render :xml => @project }
     end
   end
 
@@ -51,13 +51,30 @@ class ProjectsController < ApplicationController
     @project = Project.new(params[:project])
     @project.user = current_user
 
+    membership = Membership.new
+    membership.project = @project
+    membership.role = Role.find_by_name('Manager')
+    membership.user = current_user
+
+    trans_successful = true
+
+    begin
+      Project.transaction do
+        membership.save!
+        @project.save!
+      end
+    rescue
+      trans_successful = false
+    end
+
+
     respond_to do |format|
-      if @project.save
+      if trans_successful
         format.html { redirect_to(@project, :notice => 'Project was successfully created.') }
-        format.xml  { render :xml => @project, :status => :created, :location => @project }
+        format.xml { render :xml => @project, :status => :created, :location => @project }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @project.errors, :status => :unprocessable_entity }
+        format.xml { render :xml => @project.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -70,10 +87,10 @@ class ProjectsController < ApplicationController
     respond_to do |format|
       if @project.update_attributes(params[:project])
         format.html { redirect_to(@project, :notice => 'Project was successfully updated.') }
-        format.xml  { head :ok }
+        format.xml { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @project.errors, :status => :unprocessable_entity }
+        format.xml { render :xml => @project.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -86,7 +103,7 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to(projects_url) }
-      format.xml  { head :ok }
+      format.xml { head :ok }
     end
   end
 
