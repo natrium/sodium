@@ -12,12 +12,7 @@
 <body>
 
 <div id="wrap">
-
-  <div id="header">
-
-    <h1><a href="/">Sodium</a></h1>
-
-    <h2>where Open Source has a home..</h2>
+  <div id="topmenu">
     <p style="float:right">
       <% unless current_user.nil? %>
         <%= link_to "logout", logout_path %>
@@ -25,7 +20,11 @@
         <%= link_to "login", login_path %>
       <% end %>
     </p>
+  </div>
 
+  <div id="header">
+    <h1><a href="/">Sodium</a></h1>
+    <h2>where Open Source has a home..</h2>
   </div>
 
   <div id="contentwrap">

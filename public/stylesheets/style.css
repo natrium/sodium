@@ -19,7 +19,18 @@ a:hover {
 
 #wrap {
     width: 800px;
-    margin: 20px auto;
+    margin: 0 auto 20px;
+    background: url("../images/content.png") repeat-y scroll 0 0 transparent;
+}
+
+#topmenu {
+    padding: 5px 20px 15px;
+    margin: 0pt;
+}
+
+#topmenu p {
+    float:right;
+    margin: 0;
 }
 
 #header {
@@ -99,6 +110,9 @@ a:hover {
     padding: 10px;
     background: #F1FFDF;
     border: 1px solid #AFBF9B;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
 }
 
 #sidebar h3 {
@@ -198,6 +212,7 @@ ul#postlist {
     margin-top: 0;
     overflow: hidden;
     padding: 0;
+    width:100%;
 }
 
 ul#postlist li {
