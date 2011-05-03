@@ -1,13 +1,13 @@
-<a href="">
-  <% if user.avatar_url(:thumb) %>
-      <%= image_tag user.avatar_url(:thumb), :class => "avatar" %>
-  <% else %>
-      <%= image_tag user.gravatar_url, :class => "avatar" %>
-  <% end %>
-</a>
+<% if user.avatar_url(:thumb) %>
+    <%= image_tag user.avatar_url(:thumb), :class => "avatar" %>
+<% else %>
+    <%= image_tag user.gravatar_url, :class => "avatar" %>
+<% end %>
 
+<!--
 <% unless current_user.nil? %>
     <% if current_user == user %>
         <%= link_to "Change Avatar", users_change_avatar_path %>
     <% end %>
 <% end %>
+-->

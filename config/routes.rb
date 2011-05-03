@@ -16,7 +16,7 @@ Sodium::Application.routes.draw do
   match "users/update_avatar", :to => "users#update_avatar"
 
   get '/:slug' => 'projects#show'
-  #match '/u/:name' => 'users#show'
+  match '/u/:name' => 'users#show'
 
   resources :projects
   resources :bubbles

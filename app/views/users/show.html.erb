@@ -1,0 +1,7 @@
+<h1><%= @user.name %></h1>
+<%= render :partial => 'users/avatar', :locals => {:user => @user } %>
+<div class="clear"></div>
+
+<ul id="postlist">
+<%= render @user.bubbles %>
+</ul>
