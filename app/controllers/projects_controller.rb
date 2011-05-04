@@ -11,8 +11,8 @@ class ProjectsController < ApplicationController
     end
   end
 
-  # GET /projects/1
-  # GET /projects/1.xml
+  # Show a project identified by its slug (if given)
+  # otherwise the project_id is used.
   def show
     if params[:slug]
       @project = Project.find_by_slug(params[:slug])
@@ -45,31 +45,30 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
   end
 
-  # POST /projects
-  # POST /projects.xml
+  # Creates a new project.
+  # Automatically creates a membership for the user that creates
+  # the project and sets it's membership role to 'Manager'.
   def create
     @project = Project.new(params[:project])
     @project.user = current_user
 
     membership = Membership.new
-    membership.project = @project
     membership.role = Role.find_by_name('Manager')
     membership.user = current_user
 
     trans_successful = true
 
     Project.transaction do
-        membership.save!
+      begin
         @project.save!
+
+        membership.project = @project
+        membership.save!
+      rescue
+        flash[:notice] = "There was an error creating your project."
+        trans_successful = false
+      end
     end
-
-    begin
-
-    rescue
-      flash[:notice] = "There was an error creating your project."
-      trans_successful = false
-    end
-
 
     respond_to do |format|
       if trans_successful
@@ -110,6 +109,7 @@ class ProjectsController < ApplicationController
     end
   end
 
+  # Follow a project
   def follow
     project = Project.find params[:id]
     role = Role.find_by_name 'User'
@@ -124,6 +124,7 @@ class ProjectsController < ApplicationController
     redirect_to :back
   end
 
+  # Unfollow a project
   def unfollow
     project = Project.find params[:id]
     user = current_user
@@ -137,6 +138,8 @@ class ProjectsController < ApplicationController
     redirect_to :back
   end
 
+
+  # Edit membership of a user. Checks if acting user has 'membership.edit' right.
   def edit_member
     project = Project.find params[:project_id]
 

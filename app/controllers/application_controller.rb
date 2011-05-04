@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
     I18n.locale = session[:locale]
   end
 
+  # Checks if a user has the right to do an action on a project.
   def authorized? right, project = nil
     return false if current_user.nil?
     return true if current_user.is_admin?
@@ -22,6 +23,6 @@ class ApplicationController < ActionController::Base
       return false
     end
 
-    return !!role.rights.find_by_id(Right.find_by_name(right))
+    !!role.rights.find_by_id(Right.find_by_name(right))
   end
 end
