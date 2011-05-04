@@ -17,7 +17,7 @@ right_comments_delete = Right.create :name => "comments.delete"
 right_comments_create = Right.create :name => "comments.create"
 right_project_delete = Right.create :name => "project.delete"
 right_project_edit = Right.create :name => "project.edit"
-right_roles_edit = Right.create :name => "roles.edit"
+right_roles_edit = Right.create :name => "membership.edit"
 #right_rights_edit = Right.create :name => "rights.edit"
 
 

@@ -58,12 +58,15 @@ class ProjectsController < ApplicationController
 
     trans_successful = true
 
-    begin
-      Project.transaction do
+    Project.transaction do
         membership.save!
         @project.save!
-      end
+    end
+
+    begin
+
     rescue
+      flash[:notice] = "There was an error creating your project."
       trans_successful = false
     end
 
@@ -135,9 +138,15 @@ class ProjectsController < ApplicationController
   end
 
   def edit_member
-    @membership = Membership.find_by_user_id_and_project_id params[:user_id], params[:project_id]
-    @membership.role_id = params[:membership][:role_id]
-    @membership.save
+    project = Project.find params[:project_id]
+
+    if authorized? 'membership.edit', project
+      @membership = Membership.find_by_user_id_and_project_id params[:user_id], params[:project_id]
+      @membership.role_id = params[:membership][:role_id]
+      @membership.save
+    else
+      flash[:notice] = "You are not allowed to edit memberships!"
+    end
 
     redirect_to :back
   end
